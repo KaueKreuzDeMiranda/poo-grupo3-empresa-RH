@@ -29,3 +29,9 @@ class Gerente(Funcionario):
 
     def trabalhar(self):
         return f"\n{self.nome} está gerenciando o departamento de {self.__departamento} e liderando uma equipe de {self.__tamanho_equipe} pessoas."
+
+    @tamanho_equipe.setter
+    def tamanho_equipe(self, tamanho_equipe):
+        if tamanho_equipe < 0:
+            raise ValueError("O tamanho da equipe não pode ser negativo.")
+        self.__tamanho_equipe = tamanho_equipe
