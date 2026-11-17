@@ -27,6 +27,8 @@ class Funcionario:
 
     @idade.setter
     def idade(self, idade):
+        if idade < 14:
+            raise ValueError("A idade mínima para trabalhar é 14 anos.")
         self.__idade = idade
 
     @property
@@ -39,7 +41,7 @@ class Funcionario:
 
     def __str__(self):
         return (f"\nID: {self.identificador}"
-                f"\nNome: {self.nome}"
+                f"\nNome: {self.nome}" 
                 f"\nIdade: {self.idade}"
                 f"\nSalario: {self.salario}")
 
