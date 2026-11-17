@@ -26,3 +26,6 @@ class Gerente(Funcionario):
         return (f"{super().__str__()}"
                 f"\nDepartamento: {self.__departamento}"
                 f"\nTamanho da equipe: {self.__tamanho_equipe}")
+
+    def trabalhar(self):
+        return f"\n{self.nome} está gerenciando o departamento de {self.__departamento} e liderando uma equipe de {self.__tamanho_equipe} pessoas."
