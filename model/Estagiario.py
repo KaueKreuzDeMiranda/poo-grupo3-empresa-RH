@@ -1,4 +1,4 @@
-from Funcionario import Funcionario
+from model.Funcionario import Funcionario
 
 class Estagiario(Funcionario):
     def __init__(self, identificador, nome, idade, salario, curso, tutor):

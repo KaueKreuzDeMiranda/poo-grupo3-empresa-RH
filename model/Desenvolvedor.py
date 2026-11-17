@@ -1,4 +1,4 @@
-from Funcionario import Funcionario
+from model.Funcionario import Funcionario
 
 class Desenvolvedor(Funcionario):
     def __init__(self, identificador, nome, idade, salario, nivel, stack):
@@ -26,3 +26,6 @@ class Desenvolvedor(Funcionario):
         return (f"{super().__str__()}"
                 f"\nNível: {self.__nivel}"
                 f"\nStack: {self.__stack}")
+
+    def trabalhar(self):
+        return f"\n{self.nome} está desenvolvendo e revisando código {self.__nivel} na stack {self.__stack}."

@@ -42,3 +42,6 @@ class Funcionario:
                 f"\nNome: {self.nome}"
                 f"\nIdade: {self.idade}"
                 f"\nSalario: {self.salario}")
+
+    def trabalhar(self):
+        return f"\n{self.nome} está realizando suas atividades na empresa."
