@@ -26,3 +26,6 @@ class Estagiario(Funcionario):
         return (f"{super().__str__()}"
                 f"\nCurso: {self.__curso}"
                 f"\nTutor: {self.__tutor}")
+
+    def trabalhar(self):
+        return f"\n{self.nome} está estagiando na área de {self.__curso}, auxiliando nas tarefas sob supervisão de {self.__tutor}."
