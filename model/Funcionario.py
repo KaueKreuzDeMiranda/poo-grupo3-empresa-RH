@@ -37,6 +37,8 @@ class Funcionario:
 
     @salario.setter
     def salario(self, salario):
+        if salario <= 0:
+            raise ValueError("O salário deve ser maior que zero.")
         self.__salario = salario
 
     def __str__(self):
