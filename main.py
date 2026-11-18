@@ -1,6 +1,5 @@
 from model.Desenvolvedor import Desenvolvedor
 from model.Estagiario import Estagiario
-from model.Funcionario import Funcionario
 from model.Gerente import Gerente
 
 funcionarios = []
@@ -13,6 +12,7 @@ def exibirMenuPrincipal():
     print("4 - Listar funcionários")
     print("5 - Consultar funcionário por identificador")
     print("6 - Realizar função polimórfica")
+    print("7 - Executar métodos exclusivos")
     print("0 - Encerrar sistema")
 
 def executarOpcao(opcao):
@@ -25,9 +25,11 @@ def executarOpcao(opcao):
     elif opcao == "4":
         listarFuncionarios()
     elif opcao == "5":
-        consultarFuncionarioPorCodigo()
+        consultarFuncionarioPorIdentificador()
     elif opcao == "6":
         opcaoPolimorfica()
+    elif opcao == "7":
+        executarMetodoExclusivo()
     elif opcao == "0":
         return True
     else:
@@ -48,9 +50,6 @@ def cadastrarEstagiario():
         registrarFuncionario(estagiario)
     except ValueError as erro:
         print(erro)
-        return
-
-    registrarFuncionario(estagiario)
 
 def cadastrarDesenvolvedor():
     print("\n--- Cadastro de desenvolvedor ---")
@@ -66,9 +65,6 @@ def cadastrarDesenvolvedor():
         registrarFuncionario(desenvolvedor)
     except ValueError as erro:
         print(erro)
-        return
-
-    registrarFuncionario(desenvolvedor)
 
 def cadastrarGerente():
     print("\n--- Cadastro de gerente ---")
@@ -84,9 +80,6 @@ def cadastrarGerente():
         registrarFuncionario(gerente)
     except ValueError as erro:
         print(erro)
-        return
-
-    registrarFuncionario(gerente)
 
 def registrarFuncionario(funcionario):
     if verificarExistenciaFuncionario(funcionario.identificador):
@@ -101,11 +94,12 @@ def listarFuncionarios():
 
     if not funcionarios:
         print("\n--- Não há nenhum funcionário cadastrado! ---")
+        return
 
     for funcionario in funcionarios:
         print(funcionario)
 
-def consultarFuncionarioPorCodigo():
+def consultarFuncionarioPorIdentificador():
     identificadorFuncionarioDesejado = lerInt("\nInsira o identificador do funcionário que você deseja consultar: ")
 
     funcionario = procurarFuncionario(identificadorFuncionarioDesejado)
@@ -114,17 +108,35 @@ def consultarFuncionarioPorCodigo():
         print("\n--- Funcionário encontrado! ---")
         print(funcionario)
     else:
-        print("\n--- funcionário não encontrado! ---")
+        print("\n--- Funcionário não encontrado! ---")
 
 def opcaoPolimorfica():
-    print("\n--- trabalhos dos funcionários: ---")
+    print("\n--- Trabalhos dos funcionários: ---")
 
     if not funcionarios:
         print("\n--- Não há nenhum funcionário cadastrado! ---")
+        return
 
     for funcionario in funcionarios:
         print(f"\nFuncionário: {funcionario.nome}")
         print(funcionario.trabalhar())
+
+def executarMetodoExclusivo():
+    print("\n--- Métodos exclusivos ---")
+
+    if not funcionarios:
+        print("\n--- Não há nenhum funcionário cadastrado! ---")
+        return
+
+    for funcionario in funcionarios:
+        print(f"\nFuncionário: {funcionario.nome}")
+
+        if isinstance(funcionario, Estagiario):
+            print("\n" + funcionario.estudar())
+        elif isinstance(funcionario, Desenvolvedor):
+            print("\n" + funcionario.programar())
+        elif isinstance(funcionario, Gerente):
+            print("\n" + funcionario.reunir_equipe())
 
 def verificarExistenciaFuncionario(identificador):
     funcionario = procurarFuncionario(identificador)

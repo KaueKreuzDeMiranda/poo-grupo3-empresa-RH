@@ -29,3 +29,6 @@ class Desenvolvedor(Funcionario):
 
     def trabalhar(self):
         return f"{self.nome} está desenvolvendo e revisando código {self.__nivel} na stack {self.__stack}."
+
+    def programar(self):
+        return f"{self.nome} está programando na stack {self.stack}."

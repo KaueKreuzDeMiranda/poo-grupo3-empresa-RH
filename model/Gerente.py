@@ -31,3 +31,6 @@ class Gerente(Funcionario):
 
     def trabalhar(self):
         return f"{self.nome} está gerenciando o departamento de {self.__departamento} e liderando uma equipe de {self.__tamanho_equipe} pessoas."
+
+    def reunir_equipe(self):
+        return f"{self.nome} está reunindo a equipe de {self.tamanho_equipe} pessoas do departamento {self.departamento}."
