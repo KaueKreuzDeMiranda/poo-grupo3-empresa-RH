@@ -28,7 +28,7 @@ class Funcionario:
     @idade.setter
     def idade(self, idade):
         if idade < 14:
-            raise ValueError("A idade mínima para trabalhar é 14 anos.")
+            raise ValueError("\n--- A idade mínima para trabalhar é 14 anos. ---")
         self.__idade = idade
 
     @property
@@ -38,7 +38,7 @@ class Funcionario:
     @salario.setter
     def salario(self, salario):
         if salario <= 0:
-            raise ValueError("O salário deve ser maior que zero.")
+            raise ValueError("\n--- O salário deve ser maior que zero. ---")
         self.__salario = salario
 
     def __str__(self):

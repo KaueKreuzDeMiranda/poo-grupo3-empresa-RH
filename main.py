@@ -9,6 +9,7 @@ def exibirMenuPrincipal():
     print("1 - Cadastrar Estagiário")
     print("2 - Cadastrar Desenvolvedor")
     print("3 - Cadastrar Gerente")
+    print("4 - Listar funcionários")
     print("0 - Encerrar sistema")
 
 def executarOpcao(opcao):
@@ -18,6 +19,8 @@ def executarOpcao(opcao):
         cadastrarDesenvolvedor()
     elif opcao == "3":
         cadastrarGerente()
+    elif opcao == "4":
+        listarFuncionarios()
     elif opcao == "0":
         return True
     else:
@@ -68,6 +71,15 @@ def registrarFuncionario(funcionario):
     funcionarios.append(funcionario)
     print("\n--- Funcionário cadastrado com sucesso! ---")
 
+def listarFuncionarios():
+    print("\n--- Lista de funcionários: ---")
+
+    if not funcionarios:
+        print("\n--- Não há nenhum funcionário cadastrado! ---")
+
+    for funcionario in funcionarios:
+        print(funcionario)
+
 def verificarExistenciaFuncionario(identificador):
     funcionario = procurarFuncionario(identificador)
 
@@ -80,10 +92,6 @@ def procurarFuncionario(identificador):
             return funcionario
 
     return None
-
-#def listarFuncionarios():
-
-#def consultarFuncionarioPorCodigo():
 
 def lerString(mensagem):
     return input(mensagem)
