@@ -10,6 +10,7 @@ def exibirMenuPrincipal():
     print("2 - Cadastrar Desenvolvedor")
     print("3 - Cadastrar Gerente")
     print("4 - Listar funcionários")
+    print("5 - Consultar funcionário por identificador")
     print("0 - Encerrar sistema")
 
 def executarOpcao(opcao):
@@ -21,6 +22,8 @@ def executarOpcao(opcao):
         cadastrarGerente()
     elif opcao == "4":
         listarFuncionarios()
+    elif opcao == "5":
+        consultarFuncionarioPorCodigo()
     elif opcao == "0":
         return True
     else:
@@ -79,6 +82,17 @@ def listarFuncionarios():
 
     for funcionario in funcionarios:
         print(funcionario)
+
+def consultarFuncionarioPorCodigo():
+    identificadorFuncionarioDesejado = lerInt("\nInsira o identificador do funcionário que você deseja consultar: ")
+
+    funcionario = procurarFuncionario(identificadorFuncionarioDesejado)
+
+    if funcionario is not None:
+        print("\n--- Funcionário encontrado! ---")
+        print(funcionario)
+    else:
+        print("\n--- funcionário não encontrado! ---")
 
 def verificarExistenciaFuncionario(identificador):
     funcionario = procurarFuncionario(identificador)
