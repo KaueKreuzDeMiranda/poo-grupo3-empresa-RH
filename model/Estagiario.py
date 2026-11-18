@@ -28,4 +28,4 @@ class Estagiario(Funcionario):
                 f"\nTutor: {self.__tutor}")
 
     def trabalhar(self):
-        return f"\n{self.nome} está estagiando na área de {self.__curso}, auxiliando nas tarefas sob supervisão de {self.__tutor}."
+        return f"{self.nome} está estagiando na área de {self.__curso}, auxiliando nas tarefas sob supervisão de {self.__tutor}."

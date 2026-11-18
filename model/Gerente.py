@@ -30,4 +30,4 @@ class Gerente(Funcionario):
                 f"\nTamanho da equipe: {self.__tamanho_equipe}")
 
     def trabalhar(self):
-        return f"\n{self.nome} está gerenciando o departamento de {self.__departamento} e liderando uma equipe de {self.__tamanho_equipe} pessoas."
+        return f"{self.nome} está gerenciando o departamento de {self.__departamento} e liderando uma equipe de {self.__tamanho_equipe} pessoas."

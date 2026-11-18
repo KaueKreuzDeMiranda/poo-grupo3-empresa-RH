@@ -1,5 +1,6 @@
 from model.Desenvolvedor import Desenvolvedor
 from model.Estagiario import Estagiario
+from model.Funcionario import Funcionario
 from model.Gerente import Gerente
 
 funcionarios = []
@@ -11,6 +12,7 @@ def exibirMenuPrincipal():
     print("3 - Cadastrar Gerente")
     print("4 - Listar funcionários")
     print("5 - Consultar funcionário por identificador")
+    print("6 - Realizar função polimórfica")
     print("0 - Encerrar sistema")
 
 def executarOpcao(opcao):
@@ -24,6 +26,8 @@ def executarOpcao(opcao):
         listarFuncionarios()
     elif opcao == "5":
         consultarFuncionarioPorCodigo()
+    elif opcao == "6":
+        opcaoPolimorfica()
     elif opcao == "0":
         return True
     else:
@@ -93,6 +97,16 @@ def consultarFuncionarioPorCodigo():
         print(funcionario)
     else:
         print("\n--- funcionário não encontrado! ---")
+
+def opcaoPolimorfica():
+    print("\n--- trabalhos dos funcionários: ---")
+
+    if not funcionarios:
+        print("\n--- Não há nenhum funcionário cadastrado! ---")
+
+    for funcionario in funcionarios:
+        print(f"\nFuncionário: {funcionario.nome}")
+        print(funcionario.trabalhar())
 
 def verificarExistenciaFuncionario(identificador):
     funcionario = procurarFuncionario(identificador)

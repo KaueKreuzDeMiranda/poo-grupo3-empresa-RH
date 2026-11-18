@@ -28,4 +28,4 @@ class Desenvolvedor(Funcionario):
                 f"\nStack: {self.__stack}")
 
     def trabalhar(self):
-        return f"\n{self.nome} está desenvolvendo e revisando código {self.__nivel} na stack {self.__stack}."
+        return f"{self.nome} está desenvolvendo e revisando código {self.__nivel} na stack {self.__stack}."
