@@ -1,9 +1,9 @@
 class Funcionario:
     def __init__(self, identificador, nome, idade, salario):
         self.__identificador = identificador
-        self.__nome = nome
-        self.__idade = idade
-        self.__salario = salario
+        self.nome = nome
+        self.idade = idade
+        self.salario = salario
 
     @property
     def identificador(self):

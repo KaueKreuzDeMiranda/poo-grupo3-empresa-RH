@@ -3,8 +3,8 @@ from model.Funcionario import Funcionario
 class Gerente(Funcionario):
     def __init__(self, identificador, nome, idade, salario, departamento, tamanho_equipe):
         super().__init__(identificador, nome, idade, salario)
-        self.__departamento = departamento
-        self.__tamanho_equipe = tamanho_equipe
+        self.departamento = departamento
+        self.tamanho_equipe = tamanho_equipe
 
     @property
     def departamento(self):

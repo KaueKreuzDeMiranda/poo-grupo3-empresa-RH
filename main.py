@@ -43,7 +43,13 @@ def cadastrarEstagiario():
     curso = lerString("\nInsira o curso do estagiário: ")
     tutor = lerString("\nInsira o tutor do estagiário: ")
 
-    estagiario = Estagiario(identificador, nome, idade, salario, curso, tutor)
+    try:
+        estagiario = Estagiario(identificador, nome, idade, salario, curso, tutor)
+        registrarFuncionario(estagiario)
+    except ValueError as erro:
+        print(erro)
+        return
+
     registrarFuncionario(estagiario)
 
 def cadastrarDesenvolvedor():
@@ -55,7 +61,13 @@ def cadastrarDesenvolvedor():
     nivel = lerString("\nInsira o nível de senioridade do desenvolvedor: ")
     stack = lerString("\nInsira em qual stack trabalha o desenvolvedor: ")
 
-    desenvolvedor = Desenvolvedor(identificador, nome, idade, salario, nivel, stack)
+    try:
+        desenvolvedor = Desenvolvedor(identificador, nome, idade, salario, nivel, stack)
+        registrarFuncionario(desenvolvedor)
+    except ValueError as erro:
+        print(erro)
+        return
+
     registrarFuncionario(desenvolvedor)
 
 def cadastrarGerente():
@@ -67,7 +79,13 @@ def cadastrarGerente():
     departamento = lerString("\nInsira o departamento de gerência do gerente: ")
     tamanho_equipe = lerInt("\nInsira o tamanho da equipe do gerente: ")
 
-    gerente = Gerente(identificador, nome, idade, salario, departamento, tamanho_equipe)
+    try:
+        gerente = Gerente(identificador, nome, idade, salario, departamento, tamanho_equipe)
+        registrarFuncionario(gerente)
+    except ValueError as erro:
+        print(erro)
+        return
+
     registrarFuncionario(gerente)
 
 def registrarFuncionario(funcionario):
