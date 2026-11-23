@@ -143,7 +143,6 @@ def verificarExistenciaFuncionario(identificador):
 
     return funcionario is not None
 
-
 def procurarFuncionario(identificador):
     for funcionario in funcionarios:
         if funcionario.identificador == identificador:
